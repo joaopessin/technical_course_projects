@@ -3,7 +3,7 @@ programa
 	
 	funcao inicio()
 	{
-		real totalRebocoMensal = 0.0, monetizacaoDiaria = 0.0, valorBruto = 0.0
+		real totalRebocoMensal = 0.0, monetizacaoDiaria = 0.0
 		inteiro diasUteis = 22
 		
 		escreva("\"Alvenaria\"\n")
@@ -20,7 +20,7 @@ programa
 			monetizacaoDiaria = producaoMediaDiaria * 10
 		}
 
-		valorBruto = monetizacaoDiaria * diasUteis
+		real valorBruto = monetizacaoDiaria * diasUteis
 
 		escreva("\nQuantidade de dias úteis no mês: " + diasUteis)
 		escreva("\nProdução média diária (m²): " + producaoMediaDiaria)
