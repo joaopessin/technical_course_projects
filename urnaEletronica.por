@@ -3,7 +3,7 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro opcaoUsuario, candidatos[6], candidatosCrescente[6]
+		inteiro opcaoUsuario, alissonFreitas = 0, joseAilton = 0, claudiaAmara = 0, luziaSantos = 0, branco = 0, nulo = 0
 		cadeia votar = ""
 
 		faca {
@@ -29,23 +29,17 @@ programa
 			leia(opcaoUsuario)
 
 			se (opcaoUsuario == 45) {
-				candidatos[0] += 1
-				candidatosCrescente[0] = candidatos[0]
+				alissonFreitas++
 			} senao se(opcaoUsuario == 13) {
-				candidatos[1] += 1
-				candidatosCrescente[1] = candidatos[1]
+				joseAilton++
 			} senao se(opcaoUsuario == 12) {
-				candidatos[2] += 1
-				candidatosCrescente[2] = candidatos[2]
+				claudiaAmara++
 			} senao se(opcaoUsuario == 22) {
-				candidatos[3] += 1
-				candidatosCrescente[3] = candidatos[3]
+				luziaSantos++
 			} senao se(opcaoUsuario == 11) {
-				candidatos[4] += 1
-				candidatosCrescente[4] = candidatos[4]
+				branco++
 			} senao se(opcaoUsuario == 10) {
-				candidatos[5] += 1
-				candidatosCrescente[5] = candidatos[5]
+				nulo++
 			} senao {
 				escreva("\nValor inválido!\n")
 			}
@@ -56,34 +50,12 @@ programa
 
 		escreva("\n\"Votos dos Candidatos\"\n")
 
-		para (inteiro i = 0; i < 6; i++)
-		{
-			para (inteiro j = i; j < 6; j++)
-			{
-				se (candidatos[j] > candidatosCrescente[i]) {
-					candidatosCrescente[i] = candidatos[j]
-				}
-			}
-		}
-
-		escreva("\n45. Alisson Freitas [PTC] - " + "Votos: " + candidatosCrescente[0])
-		escreva("\n13. José Ailton     [PTA] - " + "Votos: " + candidatosCrescente[1])
-		escreva("\n12. Cláudia Amara   [PTD] - " + "Votos: " + candidatosCrescente[2])
-		escreva("\n22. Luzia Santos    [PTF] - " + "Votos: " + candidatosCrescente[3])
-		escreva("\n11. Branco                - " + "Votos: " + candidatosCrescente[4])
-		escreva("\n10. Nulo                  - " + "Votos: " + candidatosCrescente[5])
+		escreva("\n45. Alisson Freitas [PTC] - Votos: " + alissonFreitas)
+		escreva("\n13. José Ailton [PTA]     - Votos: " + joseAilton)
+		escreva("\n12. Cláudia Amara [PTD]   - Votos: " + claudiaAmara)
+		escreva("\n22. Luzia Santos [PTF]    - Votos: " + luziaSantos)
+		escreva("\n11. Branco                - Votos: " + branco)
+		escreva("\n10. Nulo                  - Votos: " + nulo)
 		escreva("\n")
 	}
 }
-
-/* $$$ Portugol Studio $$$ 
- * 
- * Esta seção do arquivo guarda informações do Portugol Studio.
- * Você pode apagá-la se estiver utilizando outro editor.
- * 
- * @POSICAO-CURSOR = 1510; 
- * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {candidatos, 6, 24, 10};
- * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
- * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
- */
