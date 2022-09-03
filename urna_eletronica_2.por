@@ -3,6 +3,32 @@ programa
 	
 	funcao inicio()
 	{
+	
+		/*
+		 * 4 Candidatos:
+		 * 45. Alisson Reis (PTC); 13. José Ailton (PTA); 12. Cláudia Amara (PTD); 22. Luzia Santos (PTF).
+		 * 
+		 * O eleitor deve escolher seu candidato via número.
+		 * 
+		 * Ao digitar o número do candidato, o eleitor deve ver o nome completo do candidato e seu partido.
+		 * 
+		 * Duas opções: votar / apurar voto.
+		 * 
+		 * Se clicar em votar, votar em um candidato ou em branco.
+		 * 
+		 * Se selecionar um candidato, deverar digitar o número do candidato e ter as opções: confirmar / corrigir.
+		 * 
+		 * Se corrigir, deverá permitir o usuário a digitar outro número de voto (máximo de 3 tentativas).
+		 * 
+		 * Caso o usuário digite um número inválido e confirme, deverá ser computado um voto nulo.
+		 * 
+		 * Caso seja atribuido a opção apurar voto, deverá pedir uma senha, e se a senha for correta, deverá apresentar...
+		 * ...o nome dos candidatos em ordem decrescente em relação ao número de votos.
+		 * 
+		 * Se algum candidato tiver os votos maior que a metade dos votos (desconsiderando branco e nulo), ele vencerá...
+		 * ... caso contrário, deverá exibir que haverá um segundo turno.
+		 */
+	
 		inteiro opcaoUsuario, alissonFreitas = 0, joseAilton = 0, claudiaAmara = 0, luziaSantos = 0, branco = 0, nulo = 0
 		cadeia votar = ""
 
