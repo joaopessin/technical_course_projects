@@ -3,85 +3,224 @@ programa
 	
 	funcao inicio()
 	{
+		inteiro opcaoUsuario = 0, branco = 0, nulo = 0, ptc = 0, pta = 0, ptd = 0, ptf = 0
+
+		enquanto (opcaoUsuario != 1 e opcaoUsuario != 2)
+		{
+			escreva("\n-------------------------------------------------------")
+			escreva("\n\"Urna Eleitoral\"")
+		 	escreva("\n1. Votar | 2. Apurar votos\n")
+		 	escreva("\nOpção: ")
+		 	leia(opcaoUsuario)
+
+			inteiro opcaoVoto = 0, limiteCorrigirVoto = 0
+
+			se (opcaoUsuario == 1)
+			{
+				enquanto (opcaoVoto != 1 e opcaoVoto != 2)
+				{
+					escreva("-------------------------------------------------------")
+					escreva("\n1. Votar em um candidato | 2. Votar em branco\n")
+					escreva("\nOpcão: ")
+					leia(opcaoVoto)
 	
-		/*
-		 * 4 Candidatos:
-		 * 45. Alisson Reis (PTC); 13. José Ailton (PTA); 12. Cláudia Amara (PTD); 22. Luzia Santos (PTF).
-		 * 
-		 * O eleitor deve escolher seu candidato via número.
-		 * 
-		 * Ao digitar o número do candidato, o eleitor deve ver o nome completo do candidato e seu partido.
-		 * 
-		 * Duas opções: votar / apurar voto.
-		 * 
-		 * Se clicar em votar, votar em um candidato ou em branco.
-		 * 
-		 * Se selecionar um candidato, deverar digitar o número do candidato e ter as opções: confirmar / corrigir.
-		 * 
-		 * Se corrigir, deverá permitir o usuário a digitar outro número de voto (máximo de 3 tentativas).
-		 * 
-		 * Caso o usuário digite um número inválido e confirme, deverá ser computado um voto nulo.
-		 * 
-		 * Caso seja atribuido a opção apurar voto, deverá pedir uma senha, e se a senha for correta, deverá apresentar...
-		 * ...o nome dos candidatos em ordem decrescente em relação ao número de votos.
-		 * 
-		 * Se algum candidato tiver os votos maior que a metade dos votos (desconsiderando branco e nulo), ele vencerá...
-		 * ... caso contrário, deverá exibir que haverá um segundo turno.
-		 */
+					inteiro numeroCandidato = 0, confirmarVoto = 0
 	
-		inteiro opcaoUsuario, alissonFreitas = 0, joseAilton = 0, claudiaAmara = 0, luziaSantos = 0, branco = 0, nulo = 0
-		cadeia votar = ""
+					se (opcaoVoto == 2)
+					{
+						enquanto (confirmarVoto != 1 e confirmarVoto != 2)
+						{
+							escreva("-------------------------------------------------------")
+							escreva("\nOpção de voto: Branco")
+							escreva("\n1. CONFIRMAR | 2. CORRIGIR\n")
+							escreva("\nOpção: ")
+							leia(confirmarVoto)
+						}
+	
+						se (confirmarVoto == 1)
+						{
+							branco++
+							opcaoUsuario = 0
+						} senao {		// corrigir voto
+							limiteCorrigirVoto++
+	
+							se (limiteCorrigirVoto < 3)
+							{
+								opcaoVoto = 0
+							} senao {
+								escreva("\nLimite de correção de votos atingido!\n")
+								opcaoUsuario = 0
+							}
+							
+						}
+						
+					} senao {		// opcaoVoto == 1 (votar em um candidato)
+						escreva("-------------------------------------------------------")
+						escreva("\n45. Alisson Reis  [PTC]\n13. José Ailton   [PTA]\n12. Cláudia Amara [PTD]\n22. Luzia Santos  [PTF]\n")
+						escreva("\nOpção: ")
+						leia(numeroCandidato)
+	
+						se (numeroCandidato != 45 e numeroCandidato != 13 e numeroCandidato != 12 e numeroCandidato != 22)
+						{
+							enquanto (confirmarVoto != 1 e confirmarVoto != 2)
+							{
+								escreva("-------------------------------------------------------")
+								escreva("\nOpção de voto não atribuída: Nulo")
+								escreva("\n1. CONFIRMAR | 2. CORRIGIR\n")
+								escreva("\nOpção: ")
+								leia(confirmarVoto)
+							}
+	
+							se (confirmarVoto == 1)
+							{
+								nulo++
+								opcaoUsuario = 0
+							} senao {		// corrigir voto
+								limiteCorrigirVoto++
+	
+								se (limiteCorrigirVoto < 3)
+								{
+									opcaoVoto = 0
+								} senao {
+									escreva("\nLimite de correção de votos atingido!\n")
+									opcaoUsuario = 0
+								}
+							}
+							
+						} senao se (numeroCandidato == 45)
+						{
+							enquanto (confirmarVoto != 1 e confirmarVoto != 2)
+							{
+								escreva("-------------------------------------------------------")
+								escreva("\nOpção de voto: 45. Alisson Reis [PTC]")
+								escreva("\n1. CONFIRMAR | 2. CORRIGIR\n")
+								escreva("\nOpção: ")
+								leia(confirmarVoto)
+							}
+	
+							se (confirmarVoto == 1)
+							{
+								ptc++
+								opcaoUsuario = 0
+							} senao {		// corrigir voto
+								limiteCorrigirVoto++
+	
+								se (limiteCorrigirVoto < 3)
+								{
+									opcaoVoto = 0
+								} senao {
+									escreva("\nLimite de correção de votos atingido!\n")
+									opcaoUsuario = 0
+								}
+							}
+						} senao se (numeroCandidato == 13)
+						{
+							enquanto (confirmarVoto != 1 e confirmarVoto != 2)
+							{
+								escreva("-------------------------------------------------------")
+								escreva("\nOpção de voto: 13. José Ailton [PTA]")
+								escreva("\n1. CONFIRMAR | 2. CORRIGIR\n")
+								escreva("\nOpção: ")
+								leia(confirmarVoto)
+							}
+	
+							se (confirmarVoto == 1)
+							{
+								pta++
+								opcaoUsuario = 0
+							} senao {		// corrigir voto
+								limiteCorrigirVoto++
+	
+								se (limiteCorrigirVoto < 3)
+								{
+									opcaoVoto = 0
+								} senao {
+									escreva("\nLimite de correção de votos atingido!\n")
+									opcaoUsuario = 0
+								}
+							}
+						} senao se (numeroCandidato == 12)
+						{
+							enquanto (confirmarVoto != 1 e confirmarVoto != 2)
+							{
+								escreva("-------------------------------------------------------")
+								escreva("\nOpção de voto: 12. Cláudia Amara [PTD]")
+								escreva("\n1. CONFIRMAR | 2. CORRIGIR\n")
+								escreva("\nOpção: ")
+								leia(confirmarVoto)
+							}
+	
+							se (confirmarVoto == 1)
+							{
+								ptd++
+								opcaoUsuario = 0
+							} senao {		// corrigir voto
+								limiteCorrigirVoto++
+	
+								se (limiteCorrigirVoto < 3)
+								{
+									opcaoVoto = 0
+								} senao {
+									escreva("\nLimite de correção de votos atingido!\n")
+									opcaoUsuario = 0
+								}
+							}
+						} senao se (numeroCandidato == 22)
+						{
+							enquanto (confirmarVoto != 1 e confirmarVoto != 2)
+							{
+								escreva("-------------------------------------------------------")
+								escreva("\nOpção de voto: 22. Luzia Santos [PTF]")
+								escreva("\n1. CONFIRMAR | 2. CORRIGIR\n")
+								escreva("\nOpção: ")
+								leia(confirmarVoto)
+							}
+	
+							se (confirmarVoto == 1)
+							{
+								ptf++
+								opcaoUsuario = 0
+							} senao {		// corrigir voto
+								limiteCorrigirVoto++
+	
+								se (limiteCorrigirVoto < 3)
+								{
+									opcaoVoto = 0
+								} senao {
+									escreva("\nLimite de correção de votos atingido!\n")
+									opcaoUsuario = 0
+								}
+							}
+						}
+					}
+					
+				}
+				
+			} senao {	// Apurar votos
+				inteiro senhaCorreta = 123456, senhaInserida = 0
 
-		faca {
-			escreva("\nEmitir candidato a eleição?")
-			escreva("\nOpção [s/n]: ")
-			leia(votar)
+				escreva("\nSenha: ")
+				leia(senhaInserida)
 
-			se (votar == "n") {
-				pare
+				se (senhaInserida == senhaCorreta)
+				{
+					escreva("\n45. Alisson Reis  [PTC] | Votos: " + ptc)
+					escreva("\n13. José Ailton   [PTA] | Votos: " + pta)
+					escreva("\n12. Cláudia Amara [PTD] | Votos: " + ptd)
+					escreva("\n22. Luzia Santos  [PTF] | Votos: " + ptf)
+					escreva("\n")
+					
+				} senao {
+					escreva("\nSenha incorreta!\n")
+
+					opcaoUsuario = 0
+				}
+				
 			}
-			
-			escreva("\n\"Candidatos a prefeitura\"\n")	// candidatos
+
+		 	
+		}
 		
-			escreva("\n45. Alisson Freitas [PTC]")	// 0
-			escreva("\n13. José Ailton [PTA]")		// 1
-			escreva("\n12. Cláudia Amara [PTD]")	// 2
-			escreva("\n22. Luzia Santos [PTF]\n")	// 3
-		
-			escreva("\n11. Branco")	// 4
-			escreva("\n10. Nulo\n")	// 5
 
-			escreva("\nOpção: ")
-			leia(opcaoUsuario)
-
-			se (opcaoUsuario == 45) {
-				alissonFreitas++
-			} senao se(opcaoUsuario == 13) {
-				joseAilton++
-			} senao se(opcaoUsuario == 12) {
-				claudiaAmara++
-			} senao se(opcaoUsuario == 22) {
-				luziaSantos++
-			} senao se(opcaoUsuario == 11) {
-				branco++
-			} senao se(opcaoUsuario == 10) {
-				nulo++
-			} senao {
-				escreva("\nValor inválido!\n")
-			}
-
-			escreva("\n----------------------------------------\n")
-
-		} enquanto (votar != "n")
-
-		escreva("\n\"Votos dos Candidatos\"\n")
-
-		escreva("\n45. Alisson Freitas [PTC] - Votos: " + alissonFreitas)
-		escreva("\n13. José Ailton [PTA]     - Votos: " + joseAilton)
-		escreva("\n12. Cláudia Amara [PTD]   - Votos: " + claudiaAmara)
-		escreva("\n22. Luzia Santos [PTF]    - Votos: " + luziaSantos)
-		escreva("\n11. Branco                - Votos: " + branco)
-		escreva("\n10. Nulo                  - Votos: " + nulo)
-		escreva("\n")
 	}
 }
