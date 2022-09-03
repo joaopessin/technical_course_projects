@@ -204,10 +204,189 @@ programa
 
 				se (senhaInserida == senhaCorreta)
 				{
-					escreva("\n45. Alisson Reis  [PTC] | Votos: " + ptc)
-					escreva("\n13. José Ailton   [PTA] | Votos: " + pta)
-					escreva("\n12. Cláudia Amara [PTD] | Votos: " + ptd)
-					escreva("\n22. Luzia Santos  [PTF] | Votos: " + ptf)
+
+					se ((ptc >= pta) e (ptc >= ptd) e (ptc >= ptf))	// PTC
+					{
+						escreva("\n45. Alisson Reis  [PTC] | Votos: " + ptc)
+
+						se ((pta >= ptd) e (pta >= ptf))	// PTA
+						{
+							escreva("\n13. José Ailton   [PTA] | Votos: " + pta)
+
+							se (ptd >= pta)
+							{
+								escreva("\n12. Cláudia Amara [PTD] | Votos: " + ptd)
+								escreva("\n22. Luzia Santos  [PTF] | Votos: " + ptf)
+							} senao {
+								escreva("\n22. Luzia Santos  [PTF] | Votos: " + ptf)
+								escreva("\n12. Cláudia Amara [PTD] | Votos: " + ptd)
+							}
+						} senao se ((ptd >= pta) e (ptd >= ptf))	// PTD
+						{
+							escreva("\n12. Cláudia Amara [PTD] | Votos: " + ptd)
+
+							se (pta >= ptf)
+							{
+								escreva("\n13. José Ailton   [PTA] | Votos: " + pta)
+								escreva("\n22. Luzia Santos  [PTF] | Votos: " + ptf)
+							} senao {
+								escreva("\n22. Luzia Santos  [PTF] | Votos: " + ptf)
+								escreva("\n13. José Ailton   [PTA] | Votos: " + pta)
+							}
+						} senao se ((ptf >= pta) e (ptf >= ptd)) {	// PTF
+							escreva("\n22. Luzia Santos  [PTF] | Votos: " + ptf)
+
+							se (pta >= ptd)
+							{
+								escreva("\n13. José Ailton   [PTA] | Votos: " + pta)
+								escreva("\n12. Cláudia Amara [PTD] | Votos: " + ptd)
+							} senao {
+								escreva("\n12. Cláudia Amara [PTD] | Votos: " + ptd)
+								escreva("\n13. José Ailton   [PTA] | Votos: " + pta)
+							}
+						}
+					} senao se ((pta >= ptc) e (pta >= ptd) e (pta >= ptf))	// PTA
+					{
+						escreva("\n13. José Ailton   [PTA] | Votos: " + pta)
+
+						se ((ptc >= ptd) e (ptc >= ptf))	// PTC
+						{
+							escreva("\n45. Alisson Reis  [PTC] | Votos: " + ptc)
+
+							se (ptd >= ptf)
+							{
+								escreva("\n12. Cláudia Amara [PTD] | Votos: " + ptd)
+								escreva("\n22. Luzia Santos  [PTF] | Votos: " + ptf)
+							} senao {
+								escreva("\n22. Luzia Santos  [PTF] | Votos: " + ptf)
+								escreva("\n12. Cláudia Amara [PTD] | Votos: " + ptd)
+							}
+						} senao se ((ptd >= ptc) e (ptd >= ptf))	// PTD
+						{
+							escreva("\n12. Cláudia Amara [PTD] | Votos: " + ptd)
+
+							se (ptc >= ptf)
+							{
+								escreva("\n45. Alisson Reis  [PTC] | Votos: " + ptc)
+								escreva("\n22. Luzia Santos  [PTF] | Votos: " + ptf)
+							} senao {
+								escreva("\n22. Luzia Santos  [PTF] | Votos: " + ptf)
+								escreva("\n45. Alisson Reis  [PTC] | Votos: " + ptc)
+							}
+						} senao se ((ptf >= ptc) e (ptf >= ptd)) {	// PTF
+							escreva("\n22. Luzia Santos  [PTF] | Votos: " + ptf)
+
+							se (ptc >= ptd)
+							{
+								escreva("\n45. Alisson Reis  [PTC] | Votos: " + ptc)
+								escreva("\n12. Cláudia Amara [PTD] | Votos: " + ptd)
+							} senao {
+								escreva("\n12. Cláudia Amara [PTD] | Votos: " + ptd)
+								escreva("\n45. Alisson Reis  [PTC] | Votos: " + ptc)
+							}
+						}
+					} senao se ((ptd >= ptc) e (ptd >= pta) e (ptd >= ptf))	// PTD
+					{
+						escreva("\n12. Cláudia Amara [PTD] | Votos: " + ptd)
+
+						se ((ptc >= pta) e (ptc >= ptf))	// PTC
+						{
+							escreva("\n45. Alisson Reis  [PTC] | Votos: " + ptc)
+
+							se (pta >= ptf)
+							{
+								escreva("\n13. José Ailton   [PTA] | Votos: " + pta)
+								escreva("\n22. Luzia Santos  [PTF] | Votos: " + ptf)
+							} senao {
+								escreva("\n22. Luzia Santos  [PTF] | Votos: " + ptf)
+								escreva("\n13. José Ailton   [PTA] | Votos: " + pta)
+							}
+						} senao se ((pta >= ptc) e (pta >= ptf))	// PTA
+						{
+							escreva("\n13. José Ailton   [PTA] | Votos: " + pta)
+
+							se (ptc >= ptf)
+							{
+								escreva("\n45. Alisson Reis  [PTC] | Votos: " + ptc)
+								escreva("\n22. Luzia Santos  [PTF] | Votos: " + ptf)
+							} senao {
+								escreva("\n22. Luzia Santos  [PTF] | Votos: " + ptf)
+								escreva("\n45. Alisson Reis  [PTC] | Votos: " + ptc)
+							}
+						} senao se ((ptf >= ptc) e (ptf >= pta)) {	// PTF
+							escreva("\n22. Luzia Santos  [PTF] | Votos: " + ptf)
+
+							se (ptc >= pta)
+							{
+								escreva("\n45. Alisson Reis  [PTC] | Votos: " + ptc)
+								escreva("\n13. José Ailton   [PTA] | Votos: " + pta)
+							} senao {
+								escreva("\n13. José Ailton   [PTA] | Votos: " + pta)
+								escreva("\n45. Alisson Reis  [PTC] | Votos: " + ptc)
+							}
+						}
+					} senao se ((ptf >= ptc) e (ptf >= pta) e (ptf >= ptd))	// PTF
+					{
+						escreva("\n22. Luzia Santos  [PTF] | Votos: " + ptf)
+
+						se ((ptc >= pta) e (ptc >= ptd))	// PTC
+						{
+							escreva("\n45. Alisson Reis  [PTC] | Votos: " + ptc)
+
+							se (pta >= ptd)
+							{
+								escreva("\n13. José Ailton   [PTA] | Votos: " + pta)
+								escreva("\n12. Cláudia Amara [PTD] | Votos: " + ptd)
+							} senao {
+								escreva("\n12. Cláudia Amara [PTD] | Votos: " + ptd)
+								escreva("\n13. José Ailton   [PTA] | Votos: " + pta)
+							}
+						} senao se ((pta >= ptc) e (pta >= ptd))	// PTA
+						{
+							escreva("\n13. José Ailton   [PTA] | Votos: " + pta)
+
+							se (ptc >= ptd)
+							{
+								escreva("\n45. Alisson Reis  [PTC] | Votos: " + ptc)
+								escreva("\n12. Cláudia Amara [PTD] | Votos: " + ptd)
+							} senao {
+								escreva("\n12. Cláudia Amara [PTD] | Votos: " + ptd)
+								escreva("\n45. Alisson Reis  [PTC] | Votos: " + ptc)
+							}
+						} senao se ((ptd >= ptc) e (ptd >= pta)) {	// PTD
+							escreva("\n12. Cláudia Amara [PTD] | Votos: " + ptd)
+
+							se (ptc >= pta)
+							{
+								escreva("\n45. Alisson Reis  [PTC] | Votos: " + ptc)
+								escreva("\n13. José Ailton   [PTA] | Votos: " + pta)
+							} senao {
+								escreva("\n13. José Ailton   [PTA] | Votos: " + pta)
+								escreva("\n45. Alisson Reis  [PTC] | Votos: " + ptc)
+							}
+						}
+					}
+
+					inteiro totalVotos = ptc + ptd + pta + ptf, metadeVotos = (totalVotos / 2)
+
+					escreva("\n")
+
+					se (ptc >= metadeVotos)
+					{
+						escreva("\nAlisson Reis do partido PTC [45] GANHOU a eleição!")
+					} senao se (ptd >= metadeVotos)
+					{
+						escreva("\nCláudia Amara do partido PTD [12] GANHOU a eleição!")
+					} senao se (pta >= metadeVotos)
+					{
+						escreva("\nJosé Ailton do partido PTA [13] GANHOU a eleição!")
+					} senao se (ptf >= metadeVotos)
+					{
+						escreva("\nLuzia Santos do partido PTF [22] GANHOU a eleição!")
+					} senao {
+						escreva("\nHaverá 2º TURNO!")
+					}
+					
 					escreva("\n")
 					
 				} senao {
@@ -217,10 +396,8 @@ programa
 				}
 				
 			}
-
 		 	
 		}
-		
 
 	}
 }
