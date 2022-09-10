@@ -213,7 +213,7 @@ programa
 						{
 							escreva("\n13. José Ailton   [PTA] | Votos: " + pta)
 
-							se (ptd >= pta)
+							se (ptd >= ptf)
 							{
 								escreva("\n12. Cláudia Amara [PTD] | Votos: " + ptd)
 								escreva("\n22. Luzia Santos  [PTF] | Votos: " + ptf)
